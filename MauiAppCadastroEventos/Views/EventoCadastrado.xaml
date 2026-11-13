@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppCadastroEventos.Views.EventoCadastrado"
+             Title="EventoCadastrado"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Gray500}">
+
+    <VerticalStackLayout Spacing="15" Padding="25">
+
+        <Label Text="Informações do Evento" 
+               TextColor="#000080" 
+               FontSize="22" 
+               HorizontalOptions="Center" 
+               FontAttributes="Bold"/>
+
+        <!-- Nome do Evento -->
+        <Label Text="{Binding Nome}" TextColor="#FFD700" FontSize="18"/>
+
+        <!-- Local -->
+        <Label Text="{Binding Local, StringFormat='Local: {0}'}" TextColor="White" FontSize="16"/>
+
+        <!-- Datas -->
+        <Label Text="{Binding DataInicio, StringFormat='Início: {0:dd/MM/yyyy}'}" TextColor="White" FontSize="16"/>
+        <Label Text="{Binding DataTermino, StringFormat='Término: {0:dd/MM/yyyy}'}" TextColor="White" FontSize="16"/>
+
+        <!-- Duração calculada via TimeSpan/Propriedade -->
+        <Label Text="{Binding DuracaoEmDias, StringFormat='Duração: {0} dia(s)'}" TextColor="#FFD700" FontSize="16"/>
+
+        <!-- Participantes -->
+        <Label Text="{Binding NumeroParticipantes, StringFormat='Participantes: {0}'}" TextColor="White" FontSize="16"/>
+
+        <!-- Custo Total Formatado -->
+        <Label Text="{Binding CustoTotalFormatado, StringFormat='Custo Total: {0}'}" TextColor="LightGreen" FontSize="20" FontAttributes="Bold"/>
+
+        <Button Text="Voltar" Clicked="BotaoVoltar_Clicked" BackgroundColor="#000080" TextColor="White" Margin="0,20,0,0"/>
+
+    </VerticalStackLayout>
+</ContentPage>
